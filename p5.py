@@ -12,7 +12,6 @@ df.head()
 df = df[['Survived','Pclass','Age','SibSp','Parch','Fare','Embarked']]
 df.isna().sum()
 df['Age']=SimpleImputer(strategy='median').fit_transform(df[['Age']])
-df['Embarked']=SimpleImputer(strategy='most_frequent').fit_transform(df[['Embarked']])
 df['Embarked']=LabelEncoder().fit_transform(df[['Embarked']])
 df.isna().sum()
 X = df.drop('Survived', axis=1)
